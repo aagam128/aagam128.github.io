@@ -1,26 +1,380 @@
-# Hi there 👋 I'm Aagam Shah
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aagam Shah — Data Scientist</title>
+  <meta name="description" content="Aagam Shah — Data Scientist. Python, SQL, NLP, predictive models, dashboards, and AI solutions. Toronto, Canada." />
+  <meta name="author" content="Aagam Shah" />
+  <meta property="og:title" content="Aagam Shah — Data Scientist" />
+  <meta property="og:description" content="Python • SQL • NLP • Predictive Modeling • Dashboards • AI solutions" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0e11;
+      --card: #131720;
+      --text: #e8eef8;
+      --muted: #9fb0c6;
+      --brand: #5fb4ff;
+      --accent: #78ffbf;
+      --ring: #1f8fff50;
+      --chip: #172032;
+      --chip-border: #22324b;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    :root.light {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #0e1320;
+      --muted: #4a5568;
+      --brand: #155eef;
+      --accent: #0fa968;
+      --ring: #155eef33;
+      --chip: #f0f4ff;
+      --chip-border: #dbe7ff;
+      --shadow: 0 12px 28px rgba(16, 24, 40, .08);
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.5; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; backdrop-filter: blur(10px); background: color-mix(in oklab, var(--bg) 85%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--text) 15%, transparent); z-index: 10;
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; }
+    .brand { font-weight: 800; letter-spacing: .2px; display: flex; gap:.6rem; align-items: center; }
+    .brand .dot { width: .55rem; height: .55rem; background: linear-gradient(135deg,var(--brand),var(--accent)); border-radius: 6px; box-shadow: 0 0 0 4px var(--ring); }
+    .links a { margin: 0 .7rem; font-weight: 500; opacity: .9; }
+    .btn { display:inline-flex; align-items:center; gap:.5rem; border:1px solid color-mix(in oklab, var(--text) 18%, transparent); background: linear-gradient(180deg, color-mix(in oklab, var(--card) 85%, transparent), var(--card)); color: var(--text); padding:.6rem .9rem; border-radius: .8rem; box-shadow: var(--shadow); transition: transform .15s ease, background .2s;
+    }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+    .ghost { background: transparent; box-shadow: none; }
+    .hero { display:grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; padding: 3rem 0 2rem; align-items: center; }
+    .card { background: var(--card); border:1px solid color-mix(in oklab, var(--text) 12%, transparent); border-radius: 1rem; padding: 1.2rem; box-shadow: var(--shadow); }
+    .kicker { text-transform: uppercase; letter-spacing: .16em; font-size:.78rem; color: var(--muted); font-weight: 700; }
+    h1 { font-size: clamp(1.8rem, 2.5vw + 1.2rem, 3rem); margin:.2rem 0 1rem; line-height: 1.15; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; gap: 1rem; }
+    .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .chips { display:flex; gap:.5rem; flex-wrap: wrap; }
+    .chip { background: var(--chip); border:1px solid var(--chip-border); padding: .45rem .6rem; border-radius: 999px; font-size:.85rem; }
+    .section { padding: 2rem 0; }
+    .section h2 { font-size: 1.4rem; margin: 0 0 .8rem; }
+    .row { display:flex; gap:1rem; align-items:center; flex-wrap: wrap; }
+    .experience { position: relative; }
+    .timeline { position: relative; padding-left: 1.25rem; }
+    .timeline::before { content:""; position:absolute; left:.35rem; top:.3rem; bottom:.4rem; width:2px; background: color-mix(in oklab, var(--text) 16%, transparent); }
+    .t-item { position:relative; margin: .6rem 0 1rem; }
+    .t-item::before { content:""; position:absolute; left:-.15rem; top:.3rem; width:.6rem; height:.6rem; border-radius: 50%; background: linear-gradient(135deg, var(--brand), var(--accent)); box-shadow:0 0 0 4px var(--ring); }
+    .title { font-weight: 700; }
+    details.summary-card { border-radius: 1rem; border:1px solid color-mix(in oklab, var(--text) 12%, transparent); background: var(--card); }
+    details.summary-card > summary { list-style: none; cursor: pointer; padding: 1rem; font-weight: 600; }
+    details[open] > summary { border-bottom: 1px dashed color-mix(in oklab, var(--text) 12%, transparent); }
+    details .content { padding: 1rem; color: var(--muted); }
+    .footer { padding: 2rem 0 3rem; color: var(--muted); font-size:.95rem; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background: #00000018; padding: .15rem .4rem; border-radius: .4rem; border: 1px solid #ffffff22; }
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero { grid-template-columns: 1fr; }
+      .grid.cols-3 { grid-template-columns: 1fr; }
+      .grid.cols-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script>
+    // Theme toggle (persists)
+    const setTheme = (mode) => {
+      const root = document.documentElement;
+      if(mode === 'light'){ root.classList.add('light'); } else { root.classList.remove('light'); }
+      localStorage.setItem('theme', mode);
+    }
+    const initTheme = () => {
+      const saved = localStorage.getItem('theme');
+      if(saved){ setTheme(saved); }
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){ setTheme('light'); }
+    }
+    document.addEventListener('DOMContentLoaded', initTheme);
 
-**Data Scientist • Python Enthusiast • Machine Learning Explorer**
+    // Copy email helper
+    function copyEmail(){
+      navigator.clipboard.writeText('aagamhere@gmail.com').then(()=>{
+        const btn = document.getElementById('copyEmail');
+        const prev = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(()=>btn.innerText = prev, 1200);
+      });
+    }
 
----
+    // Skill filter (simple client-side)
+    function filterSkills(query){
+      const chips = document.querySelectorAll('[data-skill]');
+      chips.forEach(c=>{
+        const hit = c.dataset.skill.toLowerCase().includes(query.toLowerCase());
+        c.style.opacity = hit ? 1 : .25;
+        c.style.transform = hit ? 'scale(1)' : 'scale(.98)';
+      })
+    }
 
-### 👨‍💻 About Me
+    // Expand/collapse all experience bullets
+    function toggleAll(open){
+      document.querySelectorAll('details.summary-card').forEach(d=>{ d.open = open; })
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="dot" aria-hidden="true"></span> <span>Aagam&nbsp;Shah</span></div>
+        <div class="links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="row">
+          <button class="btn ghost" onclick="setTheme(document.documentElement.classList.contains('light') ? 'dark' : 'light')" title="Toggle theme" aria-label="Toggle theme">🌓</button>
+          <a class="btn" href="#contact">Hire me</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-I'm a passionate Data Scientist specializing in solving real-world problems using data, code, and creativity. My toolkit includes Python, machine learning, Power BI, and advanced analytics. I love turning raw data into actionable insights!
+  <main class="container">
+    <section class="hero" id="about">
+      <div class="grid">
+        <div class="card">
+          <div class="kicker">Data Scientist • NLP • AI</div>
+          <h1>Turning complex data into clear, practical business insights.</h1>
+          <p class="muted">Analytical data expert with Python, SQL, NLP and data visualization expertise. I build predictive models, automate data workflows, and ship AI features that drive measurable outcomes and faster decisions.</p>
+          <div class="row" style="gap:.6rem; margin-top: .8rem; flex-wrap: wrap;">
+            <a class="btn" href="mailto:aagamhere@gmail.com">✉️ Email</a>
+            <a class="btn" href="tel:+14379662538">📞 Call</a>
+            <a class="btn" href="https://www.linkedin.com/in/aagam-shah128/" target="_blank" rel="noopener">in LinkedIn</a>
+            <a class="btn" href="https://github.com/aagam128" target="_blank" rel="noopener">🐙 GitHub</a>
+            <button id="copyEmail" class="btn ghost" onclick="copyEmail()" title="Copy email">Copy email</button>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="kicker">Quick facts</div>
+            <ul class="muted">
+              <li>📍 Toronto, Canada</li>
+              <li>📊 Predictive models, dashboards, RAG, LLM apps</li>
+              <li>🚀 Shipping to AWS (Lambda, S3) & Supabase</li>
+              <li>🤝 Strong stakeholder communication</li>
+            </ul>
+            <div class="row" style="margin-top: .6rem; gap:.6rem;">
+              <button class="btn" onclick="toggleAll(true)">Expand all</button>
+              <button class="btn ghost" onclick="toggleAll(false)">Collapse all</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
----
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <input aria-label="Filter skills" oninput="filterSkills(this.value)" placeholder="Type to filter… (e.g., NLP, SQL)" class="card" style="width:100%; padding:.8rem; font-size:1rem;" />
+      <div class="card" style="margin-top:.8rem;">
+        <div class="chips">
+          <span class="chip" data-skill="Python">Python</span>
+          <span class="chip" data-skill="SQL">SQL</span>
+          <span class="chip" data-skill="R">R</span>
+          <span class="chip" data-skill="Git">Git</span>
+          <span class="chip" data-skill="HTML">HTML</span>
+          <span class="chip" data-skill="CSS">CSS</span>
+          <span class="chip" data-skill="LLM Fine Tuning">LLM Fine Tuning</span>
+          <span class="chip" data-skill="RAG">RAG</span>
+          <span class="chip" data-skill="Prompt Engineering">Prompt Engineering</span>
+          <span class="chip" data-skill="OpenAI API">OpenAI API</span>
+          <span class="chip" data-skill="Scikit-learn">Scikit-learn</span>
+          <span class="chip" data-skill="TensorFlow">TensorFlow</span>
+          <span class="chip" data-skill="Pandas">Pandas</span>
+          <span class="chip" data-skill="NLTK">NLTK</span>
+          <span class="chip" data-skill="Selenium">Selenium</span>
+          <span class="chip" data-skill="AWS S3, IAM, DynamoDB">AWS (S3, IAM, DynamoDB)</span>
+          <span class="chip" data-skill="Power BI">Power BI</span>
+          <span class="chip" data-skill="Excel">Excel</span>
+          <span class="chip" data-skill="Matplotlib">Matplotlib</span>
+          <span class="chip" data-skill="Seaborn">Seaborn</span>
+          <span class="chip" data-skill="Plotly">Plotly</span>
+          <span class="chip" data-skill="VBA">VBA</span>
+          <span class="chip" data-skill="Postman">Postman</span>
+          <span class="chip" data-skill="Financial Modeling">Financial Modeling</span>
+          <span class="chip" data-skill="Entity Recognition">Entity Recognition</span>
+          <span class="chip" data-skill="Agile">Agile</span>
+          <span class="chip" data-skill="Dashboarding">Dashboarding</span>
+          <span class="chip" data-skill="Stakeholder Management">Stakeholder Management</span>
+          <span class="chip" data-skill="Storytelling">Storytelling</span>
+          <span class="chip" data-skill="Data Pipelines">Data Pipelines</span>
+        </div>
+      </div>
+    </section>
 
-### ⚡ Skills & Tools
+    <section class="section experience" id="experience">
+      <h2>Experience</h2>
 
-- **Programming:** Python
-- **Data Science:** Machine Learning, Deep Learning, Statistical Analysis
-- **Visualization & BI:** Power BI, Matplotlib, Seaborn
-- **Data Manipulation:** Pandas, NumPy, Scikit-learn
+      <details class="summary-card">
+        <summary>
+          <div class="row" style="justify-content: space-between;">
+            <span class="title">Data Scientist — Mesons Technology</span>
+            <span class="muted">Sep 2025 – Present · Toronto, Canada</span>
+          </div>
+        </summary>
+        <div class="content">
+          <ul>
+            <li>Designed and shipped an AI-driven job recommendation system (resume parsing, skill extraction, role matching) reaching <strong>92%+ job-fit accuracy</strong>.</li>
+            <li>Deployed scalable Python APIs and AWS Lambda services for real-time resume insights.</li>
+            <li>Partnered cross-functionally to align models with operations; translated results for non-technical stakeholders.</li>
+          </ul>
+        </div>
+      </details>
 
----
+      <details class="summary-card" open>
+        <summary>
+          <div class="row" style="justify-content: space-between;">
+            <span class="title">Data Scientist — Pegasus AI</span>
+            <span class="muted">May 2025 – Present · Toronto, Canada</span>
+          </div>
+        </summary>
+        <div class="content">
+          <ul>
+            <li>Built Supabase RPCs powering interactive inventory dashboards; <strong>cut manual reporting by 70%</strong>.</li>
+            <li>Automated data pipelines with validation/schema alignment, reducing prep from hours to minutes.</li>
+            <li>Automated OCS compliance workflows, saving managers several hours weekly.</li>
+            <li>Implemented geo-based inventory rebalancing, improving availability and <strong>reducing stock imbalance by 25%</strong>.</li>
+            <li>Integrated GPT enhancements to create business-ready summaries for store and exec decisions.</li>
+          </ul>
+        </div>
+      </details>
 
-### 🌍 Connect with Me
+      <details class="summary-card">
+        <summary>
+          <div class="row" style="justify-content: space-between;">
+            <span class="title">Python / ML Developer — Welspun Transformation Service</span>
+            <span class="muted">Jul 2023 – Dec 2023 · Ahmedabad, India</span>
+          </div>
+        </summary>
+        <div class="content">
+          <ul>
+            <li>Built an AI chatbot for HR/IT workflows (leave, tickets, payroll), <strong>reducing response time by 65%</strong>.</li>
+            <li>Trained a sensitive-input detection model with <strong>98%+ accuracy</strong>, reducing manual review by 87%.</li>
+            <li>Developed Power BI dashboards for automated financial and performance reporting.</li>
+          </ul>
+        </div>
+      </details>
 
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/aagam-shah128/)
+      <div class="timeline card" style="margin-top:1rem;">
+        <div class="t-item">
+          <div class="title">Machine Learning Developer — Thinkbiz Pvt Ltd.</div>
+          <div class="muted">Jan 2022 – Nov 2022 · Ahmedabad, India</div>
+          <ul class="muted">
+            <li>ETL to warehouse; cleaned and transformed data with Python & SQL (≈30% faster prep).</li>
+            <li>Assisted in building monitored ML models for segmentation & sales prediction (<strong>+15% forecasting</strong>).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
----
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="kicker">Apr 2025 – Oct 2025</div>
+          <div class="title">AI-Powered Early Detection of Neurodegenerative Diseases</div>
+          <p class="muted">Gamified app with MMSE, CDT, RAVLT; pipeline using LLMs, CNNs, LSTMs to classify cognitive impairment; RAG-tuned clinical summaries.</p>
+          <a class="btn" href="#" onclick="alert('Add your GitHub or demo link here!')">View Demo</a>
+        </div>
+        <div class="card">
+          <div class="kicker">Oct 2024 – Dec 2024</div>
+          <div class="title">Financial Chatbot on CIBC Quarterly Reports</div>
+          <p class="muted">NLP chatbot for querying financial performance; Keras trend model; sentiment & topic modeling on 10+ reports with 85%+ accuracy.</p>
+          <a class="btn" href="#" onclick="alert('Add your GitHub or demo link here!')">View Repo</a>
+        </div>
+        <div class="card">
+          <div class="kicker">Jun 2024 – Aug 2024</div>
+          <div class="title">Toronto Police Traffic Collision Fatality Prediction</div>
+          <p class="muted">XGBoost & logistic regression, 10+ engineered features, AUC 0.91. Streamlit dashboard for risk conditions & time windows.</p>
+          <a class="btn" href="#" onclick="alert('Add your GitHub or demo link here!')">Open Dashboard</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <h2>Education & Certifications</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="title">Lambton College — Postgraduate Certificate, AI & ML</div>
+          <div class="muted">Apr 2024 – Dec 2025 · Toronto, Canada</div>
+        </div>
+        <div class="card">
+          <div class="title">LJ Institute of Engineering & Technology — B.E., ICT</div>
+          <div class="muted">Aug 2019 – May 2023 · Ahmedabad, India</div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:1rem;">
+        <div class="row" style="justify-content: space-between;">
+          <div>
+            <div class="title">AWS Certified AI Practitioner</div>
+            <div class="muted">Status: Ongoing</div>
+          </div>
+          <div>
+            <div class="title">Machine Learning — Cognitive Class</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p class="muted">Interested in collaborating or hiring? I’m open to roles in data science, machine learning, and applied NLP.</p>
+        <div class="row">
+          <a class="btn" href="mailto:aagamhere@gmail.com">aagamhere@gmail.com</a>
+          <a class="btn ghost" href="tel:+14379662538">+1 (437) 966‑2538</a>
+          <a class="btn" href="https://www.linkedin.com/in/aagam-shah128/" target="_blank">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/aagam128" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="row" style="justify-content: space-between;">
+        <span>© <span id="year"></span> Aagam Shah</span>
+        <span class="muted">Built with semantic HTML, accessible components, and a sprinkle of JS.</span>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+    </section>
+  </main>
+
+  <!-- JSON-LD for recruiter-rich preview -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aagam Shah",
+    "jobTitle": "Data Scientist",
+    "address": {"@type":"PostalAddress", "addressLocality":"Toronto", "addressRegion":"ON", "addressCountry":"CA"},
+    "email": "mailto:aagamhere@gmail.com",
+    "telephone": "+14379662538",
+    "sameAs": [
+      "https://www.linkedin.com/in/aagam-shah128/",
+      "https://github.com/aagam128"
+    ],
+    "knowsAbout": ["Python", "SQL", "NLP", "RAG", "LLM", "Power BI", "TensorFlow", "Scikit-learn"]
+  }
+  </script>
+</body>
+</html>
